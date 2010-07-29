@@ -56,7 +56,7 @@ debug_led(1);
 tick = get_tick_count();
 tick2 = tick;
 static long usb_physw[3];
-if (conf.synch_enable && conf.ricoh_ca1_mode && conf.remote_enable && (!shooting_get_drive_mode()|| (shooting_get_drive_mode()==1) || ((shooting_get_drive_mode()==2) && state_shooting_progress != SHOOTING_PROGRESS_PROCESSING)))                                     
+if (conf.synch_enable && conf.ricoh_ca1_mode && conf.remote_enable && (!shooting_get_drive_mode()|| (shooting_get_drive_mode()==1) || ((shooting_get_drive_mode()==2) && state_shooting_progress != SHOOTING_PROGRESS_PROCESSING)))
 // if (conf.synch_enable && conf.ricoh_ca1_mode && conf.remote_enable)                                         // synch mode enable so wait for USB to disconnect
   {
 // ------ add by Masuji SUTO (start) --------------
@@ -73,11 +73,11 @@ if(conf.ricoh_ca1_mode && conf.remote_enable)
 			if(shoot_counter<2) shutter_int=3;
 			shoot_counter--;
 			}
-		else{	
+		else{
 		prev_usb_power=0;
 		nSW = 0;
 		do
-			{     
+			{
             usb_physw[2] = 0;                                             // makes sure USB bit is cleared.
            _kbd_read_keys_r2(usb_physw);
 			cur_usb_power = (usb_physw[2] & USB_MASK)==USB_MASK;
@@ -109,19 +109,19 @@ if(conf.ricoh_ca1_mode && conf.remote_enable)
 					prev_usb_power=cur_usb_power;
 					}
 				}
-						
+
 			if((int)get_tick_count()-tick >= DELAY_TIMEOUT) {nSW=20;shutter_int=2;}
 			}
 		 while(nSW<20);
 		 }
-		} 		//continuous-shooting mode 
-	else{		//nomal mode 	
+		} 		//continuous-shooting mode
+	else{		//nomal mode
 			shoot_counter=0;
 			if(conf.bracket_type>2){
 				shoot_counter=(conf.bracket_type-2)*2;
 				}
    do
-         {     
+         {
             usb_physw[2] = 0;                                             // makes sure USB bit is cleared.
            _kbd_read_keys_r2(usb_physw);
            }
@@ -139,7 +139,7 @@ else
           {
             usb_physw[2] = 0;                                             // makes sure USB bit is cleared.
            _kbd_read_keys_r2(usb_physw);
-             
+
            }
         while((usb_physw[2]&USB_MASK) &&  ((int)get_tick_count()-tick < DELAY_TIMEOUT));
     }
@@ -162,7 +162,7 @@ asm volatile ("LDMFD SP!, {R0-R11,LR}\n"); // restore R0-R11 and LR from stack
 
 static void __attribute__((noinline)) mykbd_task_proceed()
 {
-    while (physw_run){ 
+    while (physw_run){
 	_SleepTask(10);
 
 	if (wrap_kbd_p1_f() == 1){ // autorepeat ?
@@ -268,7 +268,7 @@ void my_kbd_read_keys()
      }
     else physw_status[2] = physw_status[2] & ~SD_READONLY_FLAG;
 
-    _kbd_pwr_off();
+    //_kbd_pwr_off(); //как в a590
 
 }
 
@@ -390,8 +390,8 @@ long kbd_get_autoclicked_key() {
             return 0;
         }
     }
-	
-	
+
+
 }
 
 long kbd_use_zoom_as_mf() {
@@ -436,19 +436,19 @@ static KeyMap keymap[] = {
     /* tiny bug: key order matters. see kbd_get_pressed_key()
      * for example
      */
-	{ 2, KEY_UP		, 0x00000010 }, 
-	{ 2, KEY_DOWN		, 0x00000020 }, 
-	{ 2, KEY_LEFT		, 0x00000080 }, 
-	{ 2, KEY_RIGHT		, 0x00000040 }, 
-	{ 2, KEY_SET		, 0x00000100 }, 
+	{ 2, KEY_UP		, 0x00000010 },
+	{ 2, KEY_DOWN		, 0x00000020 },
+	{ 2, KEY_LEFT		, 0x00000080 },
+	{ 2, KEY_RIGHT		, 0x00000040 },
+	{ 2, KEY_SET		, 0x00000100 },
 	{ 1, KEY_SHOOT_FULL	, 0xC0000000 },
-	{ 1, KEY_SHOOT_HALF	, 0x40000000 }, 
-	{ 2, KEY_ZOOM_IN	, 0x00000004 }, 
-	{ 2, KEY_ZOOM_OUT	, 0x00000008 }, 
-	{ 2, KEY_MENU		, 0x00000400 }, 
-	{ 2, KEY_DISPLAY	, 0x00000200 }, 
-	{ 2, KEY_PRINT		, 0x00000800 }, 
-	{ 1, KEY_ERASE		, 0x00800000 }, 
+	{ 1, KEY_SHOOT_HALF	, 0x40000000 },
+	{ 2, KEY_ZOOM_IN	, 0x00000004 },
+	{ 2, KEY_ZOOM_OUT	, 0x00000008 },
+	{ 2, KEY_MENU		, 0x00000400 },
+	{ 2, KEY_DISPLAY	, 0x00000200 },
+	{ 2, KEY_PRINT		, 0x00000800 },
+	{ 1, KEY_ERASE		, 0x00800000 },
 	{ 0, 0, 0 }
 };
 
@@ -463,3 +463,4 @@ void kbd_fetch_data(long *dst)
     dst[1] = *mmio1;
     dst[2] = *mmio2 & 0xffff;
 }
+

@@ -1,9 +1,10 @@
 #include "stubs_asm.h"
 
-DEF(physw_status, 0x01061c)
+DEF(physw_status, 0x0EBDC)
 DEF(physw_run, 0x1ca4)
-DEF(FlashParamsTable,0xFFE7D1B4)
-DEF(zoom_busy, 0x9DC0)  //0x9DAC + 0x14
+DEF(FlashParamsTable,0xFFE9EF08) // found at 0xFFDF11FC //m.b. OK
+DEF(zoom_busy, 0x7F4C)  //0x7F38 + 0x14 //OK
+//UP
 DEF(focus_busy, 0x9D50) //  0x9CB8
 DEF(canon_menu_active,0xB55C)
 DEF(canon_shoot_menu_active,0xAE15)   // 0xAE14+1
@@ -16,3 +17,4 @@ DEF(some_f_for_dng, 0x8934)
 DEF(second_ext_for_dng, 0x8954)
 DEF(levent_table,0xFFE60474)
 DEF(playrec_mode,0x5704) // "MenuIn" 0x5700 + 4
+

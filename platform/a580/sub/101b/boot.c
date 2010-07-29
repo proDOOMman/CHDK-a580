@@ -276,10 +276,10 @@ void __attribute__((naked,noinline)) task_Startup_my() { //#fs
                 "BL      sub_FFC19B5C\n"
         );
 
-        //CreateTask_PhySw(); //TODO: uncomment!
+        CreateTask_PhySw(); //TODO: uncomment!
 
         asm volatile (
-                "BL      sub_FFC118F0\n"        // CreateTask_PhySw - checks buttons and acts accordingly//TODO: comment!
+                //"BL      sub_FFC118F0\n"        // CreateTask_PhySw - checks buttons and acts accordingly//TODO: comment!
 
                 "BL      sub_FFC14A34_my\n"        // divert to intercept task_ShootSeqTask
                 "BL      sub_FFC19B74\n"
