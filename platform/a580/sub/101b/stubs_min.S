@@ -1,12 +1,12 @@
 #include "stubs_asm.h"
 
 DEF(physw_status, 0x0EBDC)
-DEF(physw_run, 0x1ca4)
+DEF(physw_run, 0x1be4 + 0x0c)
 DEF(FlashParamsTable,0xFFE9EF08) // found at 0xFFDF11FC //m.b. OK
 DEF(zoom_busy, 0x7F4C)  //0x7F38 + 0x14 //OK
 //UP
 DEF(focus_busy, 0x9D50) //  0x9CB8
-DEF(canon_menu_active,0xB55C)
+DEF(canon_menu_active,0x8BD8 + 4) //m.b. OK
 DEF(canon_shoot_menu_active,0xAE15)   // 0xAE14+1
 DEF(recreview_hold, 0xABE8) // 0xAB38+0xB0
 

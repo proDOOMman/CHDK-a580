@@ -16,19 +16,6 @@ void boot();
 
 #define DEBUG_LED 0xC02200C4
 
-void debugLed();
-
-void debugLed()
-{
-        volatile long *p = (void*)DEBUG_LED;       // turned off later, so assumed to be power
-
-        int counter;
-
-        // DEBUG: blink led
-        counter = 3000000; *p = 0x46;  while (counter--) { asm("nop\n nop\n"); };
-        counter = 3000000; *p = 0x44;  while (counter--) { asm("nop\n nop\n"); };
-}
-
 void boot() { //#fs
     long *canon_data_src = (void*)0xFFEBFB4C;
     long *canon_data_dst = (void*)0x1900;

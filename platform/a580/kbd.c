@@ -10,7 +10,7 @@ typedef struct {
 	long canonkey;
 } KeyMap;
 
-
+static long alt_mode_key_mask = 0x00000800;
 static long kbd_new_state[3];
 static long kbd_prev_state[3];
 static long kbd_mod_state[3];
@@ -268,7 +268,7 @@ void my_kbd_read_keys()
      }
     else physw_status[2] = physw_status[2] & ~SD_READONLY_FLAG;
 
-    //_kbd_pwr_off(); //как в a590
+    //_kbd_pwr_off();
 
 }
 
