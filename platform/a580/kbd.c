@@ -10,7 +10,6 @@ typedef struct {
 	long canonkey;
 } KeyMap;
 
-static long alt_mode_key_mask = 0x00000800;
 static long kbd_new_state[3];
 static long kbd_prev_state[3];
 static long kbd_mod_state[3];
@@ -22,7 +21,7 @@ static int shoot_counter=0;
 #define DELAY_TIMEOUT 10000
 
 #define KEYS_MASK0 (0x00000000)
-#define KEYS_MASK1 (0xC0800000)
+#define KEYS_MASK1 (0xC0800000) // 0xC0800000 // <--- проблема вроде как тут!
 #define KEYS_MASK2 (0x0FFC)
 
 #define NEW_SS (0x2000)
@@ -268,7 +267,7 @@ void my_kbd_read_keys()
      }
     else physw_status[2] = physw_status[2] & ~SD_READONLY_FLAG;
 
-    //_kbd_pwr_off();
+    _kbd_pwr_off();
 
 }
 
@@ -310,6 +309,7 @@ void kbd_key_release(long key)
 
 void kbd_key_release_all()
 {
+    debug_led(1);
   kbd_mod_state[0] |= KEYS_MASK0;
   kbd_mod_state[1] |= KEYS_MASK1;
   kbd_mod_state[2] |= KEYS_MASK2;
@@ -445,10 +445,10 @@ static KeyMap keymap[] = {
 	{ 1, KEY_SHOOT_HALF	, 0x40000000 },
 	{ 2, KEY_ZOOM_IN	, 0x00000004 },
 	{ 2, KEY_ZOOM_OUT	, 0x00000008 },
-	{ 2, KEY_MENU		, 0x00000400 },
-	{ 2, KEY_DISPLAY	, 0x00000200 },
+	{ 2, KEY_MENU		, 0x00000200 },
+	{ 2, KEY_DISPLAY	, 0x00000400 },
 	{ 2, KEY_PRINT		, 0x00000800 },
-	{ 1, KEY_ERASE		, 0x00800000 },
+//	{ 1, KEY_ERASE		, 0x00800000 }, // ??? WHAT???
 	{ 0, 0, 0 }
 };
 

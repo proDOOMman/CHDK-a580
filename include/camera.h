@@ -575,6 +575,7 @@
 // camera name
 #define PARAM_CAMERA_NAME 4 // parameter number for GetParameterData
 
+#undef CAM_ADJUSTABLE_ALT_BUTTON
 #undef CAM_EXT_TV_RANGE
 //#define CAM_MULTIPART               1
 #undef CAM_MULTIPART
