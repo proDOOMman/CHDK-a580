@@ -21,7 +21,7 @@ static int shoot_counter=0;
 #define DELAY_TIMEOUT 10000
 
 #define KEYS_MASK0 (0x00000000)
-#define KEYS_MASK1 (0xC0800000) // 0xC0800000 // <--- проблема вроде как тут!
+#define KEYS_MASK1 (0xC0800000)
 #define KEYS_MASK2 (0x0FFC)
 
 #define NEW_SS (0x2000)
@@ -309,7 +309,6 @@ void kbd_key_release(long key)
 
 void kbd_key_release_all()
 {
-    debug_led(1);
   kbd_mod_state[0] |= KEYS_MASK0;
   kbd_mod_state[1] |= KEYS_MASK1;
   kbd_mod_state[2] |= KEYS_MASK2;

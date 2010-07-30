@@ -12,18 +12,18 @@ void *hook_raw_ret_addr()
 
 char *hook_raw_image_addr()
 {
-    return (char*)0x10F6C860;
+    return (char*)0x10F341C0; //found at 0xFFC77400
 }
 
 long hook_raw_size()
 {
-    return 0x9DCCE0;
+    return 0x9E6FC4; //found at 0xFFE38818
 }
 
 void *vid_get_viewport_live_fb()
 {
 //    return (void*)0;//0x10670ee0;
-    void **fb=(void **)0x21D0;
+    void **fb=(void **)0x6AA8; //0xFFCA0CC4
     unsigned char buff = *((unsigned char*)0x2084);
     if (buff == 0) {
         buff = 2;
@@ -34,19 +34,19 @@ void *vid_get_viewport_live_fb()
     return fb[buff];
 }
 
-void *vid_get_bitmap_fb()       
+void *vid_get_bitmap_fb()
 {
-    return (void*)0x10361000;
+    return (void*)0x10361000; //OK 0xFFCA719
 }
 
 void *vid_get_viewport_fb()
 {
-    return (void*)0x1065A4D0; // 0x107D5FD0
+    return (void*)0x10659E80; // 0xFFE364B0
 }
 
 void *vid_get_viewport_fb_d()
 {
-    return (void*)(*(int*)0x540C);  //5410
+    return (void*)(*(int*)0x5050 + 0x48);  // may be...
 }
 
 
@@ -66,7 +66,7 @@ long vid_get_viewport_height()
 }
 char *camera_jpeg_count_str()
 {
-    return (char*)0x580CC;
+    return (char*)0x48AE0; // near a9999
 }
 
 long vid_get_bitmap_buffer_width() { return 360; }
