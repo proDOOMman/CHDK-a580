@@ -17,7 +17,7 @@ char *hook_raw_image_addr()
 
 long hook_raw_size()
 {
-    return 0x9E6FC4; //found at 0xFFE38818
+    return 0x9DCCE0; //было 0x9E6FC4; //found at 0xFFE38818
 }
 
 void *vid_get_viewport_live_fb()
