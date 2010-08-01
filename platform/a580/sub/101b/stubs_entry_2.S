@@ -158,7 +158,7 @@ NHSTUB(taskSuspend,			 0xFFC00948)
 NHSTUB(GetBatteryTemperature, 0xFFC33A38)
 NHSTUB(GetCCDTemperature, 0xFFC339C8)
 NHSTUB(GetOpticalTemperature, 0xFFC33AA8)
-NHSTUB(PT_PlaySound, 0xFFE63E0C)	//  does not seem right guess only
+//NHSTUB(PT_PlaySound, 0xFFE63E0C)	//  does not seem right guess only
 NHSTUB(EnterToCompensationEVF, 0xFFC15AA4)
 NHSTUB(ExitFromCompensationEVF, 0xFFC15BF0)
 NHSTUB (DoAFLock,  0xFFC157B4)

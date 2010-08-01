@@ -16,5 +16,5 @@ DEF(zoom_status, 0xD7C4)
 DEF(some_f_for_dng, 0x8934)
 DEF(second_ext_for_dng, 0x8954)
 DEF(levent_table,0xFFE60474)
-DEF(playrec_mode,0x5704) // "MenuIn" 0x5700 + 4
+DEF(playrec_mode,0x5320) // OK!
 
