@@ -98,6 +98,7 @@ NHSTUB(ReadFastDir, 0xFFDCE860)		// not sure if needed, but a720 lists both with
 NHSTUB(closedir, 0xFFDCE930)
 NHSTUB(UnsetZoomForMovie, 0xFFD31F0C)
 //NHSTUB(PostLEDMessage, 0xFFC00948)	// NOT FOUND null stubbed
+NHSTUB(LEDDrive, 0xFFC30F6C)
 NHSTUB(TurnOnMic, 0xFFC31F80)
 NHSTUB(TurnOffMic, 0xFFC31FAC)
 NHSTUB(ExpCtrlTool_StopContiAE,  0xFFC219FC) // FFC219FC
@@ -158,7 +159,7 @@ NHSTUB(taskSuspend,			 0xFFC00948)
 NHSTUB(GetBatteryTemperature, 0xFFC33A38)
 NHSTUB(GetCCDTemperature, 0xFFC339C8)
 NHSTUB(GetOpticalTemperature, 0xFFC33AA8)
-//NHSTUB(PT_PlaySound, 0xFFE63E0C)	//  does not seem right guess only
+NHSTUB(PT_PlaySound, 0xFFC47374)
 NHSTUB(EnterToCompensationEVF, 0xFFC15AA4)
 NHSTUB(ExitFromCompensationEVF, 0xFFC15BF0)
 NHSTUB (DoAFLock,  0xFFC157B4)
