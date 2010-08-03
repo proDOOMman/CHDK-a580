@@ -14,7 +14,7 @@ const ApertureSize aperture_sizes_table[] = {
     { 13, 372, "4.0" },
     { 14, 409, "4.5" },
     { 15, 448, "5.0" },
-    { 16, 480, "5.5" },
+    { 16, 480, "5.5" }
 };
 
 const ShutterSpeed shutter_speeds_table[] = {

@@ -12,12 +12,12 @@ void *hook_raw_ret_addr()
 
 char *hook_raw_image_addr()
 {
-    return (char*)0x10F341C0; //found at 0xFFC77400
+    return (char*)0x10F341C0; //found at 0xFFC77400, OK
 }
 
 long hook_raw_size()
 {
-    return 0x9DCCE0; //было 0x9E6FC4; //found at 0xFFE38818
+    return 0x9DCCE0; //OK
 }
 
 void *vid_get_viewport_live_fb()

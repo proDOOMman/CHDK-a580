@@ -8,7 +8,7 @@ DEF(playrec_mode,0x5320) // OK!
 //UP
 DEF(focus_busy, 0x9D50) //  0x9CB8
 DEF(canon_menu_active,0x8BD8 + 4) //m.b. OK
-DEF(canon_shoot_menu_active,0xAE15)   // 0xAE14+1
+DEF(canon_shoot_menu_active,0x94B9)   // 0x94B8+1
 DEF(recreview_hold, 0xABE8) // 0xAB38+0xB0
 
 DEF(movie_status, 0x5570)  // 0x5538 + 0x38
