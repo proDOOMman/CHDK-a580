@@ -8,16 +8,13 @@
 
 const ApertureSize aperture_sizes_table[] = {
     {  9, 273, "2.6" },
-    { 10, 288, "2.8" },
-    { 11, 320, "3.2" },
-    { 12, 352, "3.5" },
-    { 13, 384, "4.0" },
-    { 14, 416, "4.5" },
+    { 10, 285, "2.8" },
+    { 11, 304, "3.2" },
+    { 12, 337, "3.5" },
+    { 13, 372, "4.0" },
+    { 14, 409, "4.5" },
     { 15, 448, "5.0" },
-    { 16, 480, "5.6" },
-    { 17, 512, "6.3" },
-    { 18, 544, "7.1" },
-    { 19, 576, "8.0" },
+    { 16, 480, "5.5" },
 };
 
 const ShutterSpeed shutter_speeds_table[] = {
@@ -92,27 +89,23 @@ Movie: 640 x 480 (20 fps/20 fps LP), 320 x 240 (30 fps) available up to 4GB or 6
 
 canon mode list in FFE7CFFC 100c
 */
+// 32774 - ручной режим с ночным уклоном
 static const CapturemodeMap modemap[] = {
-    { MODE_AUTO,               32768 },
-    { MODE_P,                  32772 },
-    { MODE_TV,                 32771 },
-    { MODE_AV,                 32770 },
-    { MODE_M,                  32769 },
-    { MODE_VIDEO_STD,          2597  },
-    { MODE_VIDEO_COMPACT,      2599  },
-    { MODE_STITCH,             33290 },
-    { MODE_SCN_UNDERWATER,     16406 },
-    { MODE_SCN_AQUARIUM,       16407 },
-    { MODE_SCN_NIGHT_SCENE,    16398 },
-    { MODE_SCN_FOLIAGE,        16402 },
-    { MODE_SCN_SNOW,           16403 },
-    { MODE_SCN_BEACH,          16404 },
-    { MODE_SCN_FIREWORK,       16405 },
-    { MODE_INDOOR,             32785 },
-    { MODE_KIDS_PETS,          32784 },
-    { MODE_NIGHT_SNAPSHOT,     32779 },
-    { MODE_LANDSCAPE,          32780 },
-    { MODE_PORTRAIT,           32781 },
+    { MODE_AUTO,               32768 },//OK
+    { MODE_P,                  32772 },//OK
+    { MODE_VIDEO_STD,          2599  },//OK
+    { MODE_VIDEO_COMPACT,      2601  },//OK
+    { MODE_SCN_AQUARIUM,       16408 },//OK
+    { MODE_SCN_NIGHT_SCENE,    16398 },//OK
+    { MODE_SCN_FOLIAGE,        16403 },//OK
+    { MODE_SCN_SNOW,           16404 },//OK
+    { MODE_SCN_BEACH,          16405 },//OK
+    { MODE_SCN_FIREWORK,       16406 },//OK
+    { MODE_INDOOR,             32785 },//OK
+    { MODE_KIDS_PETS,          32784 },//OK
+    { MODE_NIGHT_SNAPSHOT,     32779 },//OK
+    { MODE_LANDSCAPE,          32780 },//OK
+    { MODE_PORTRAIT,           32781 },//OK
 };
 
 #include "../generic/shooting.c"
