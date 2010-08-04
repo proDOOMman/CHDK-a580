@@ -59,9 +59,6 @@ NHSTUB(Fread_Fut, 0xFFC13650)
 NHSTUB(Fseek_Fut, 0xFFC13744)
 NHSTUB(Remove, 0xFFC13BC4)
 NHSTUB(rename, 0xFFC13C50)
-//NHSTUB(GetDrive_ClusterSize, 0xFFC3D948)			// also possible FFC3D948 but with sel. value both firmwares inside ending B sub_... have 0x64
-//NHSTUB(GetDrive_TotalClusters, 0xFFC3D914)		// both firmwares have inside B sub_ 0x54
-//NHSTUB(GetDrive_FreeClusters, 0xFFC3D154)		// both firmwares have inside B sub_ 0x60
 NHSTUB(LockMainPower, 0xFFC5C808)
 NHSTUB(UnlockMainPower, 0xFFC5C75C)
 NHSTUB(GetCurrentAvValue, 0xFFD05B84)

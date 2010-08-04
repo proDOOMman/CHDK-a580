@@ -263,10 +263,10 @@ void __attribute__((naked,noinline)) task_Startup_my() { //#fs
                 "BL      sub_FFC19B5C\n"
         );
 
-        CreateTask_PhySw(); //TODO: uncomment!
+        CreateTask_PhySw();
 
         asm volatile (
-                //"BL      sub_FFC118F0\n"        // CreateTask_PhySw - checks buttons and acts accordingly//TODO: comment!
+                //"BL      sub_FFC118F0\n"        // CreateTask_PhySw - checks buttons and acts accordingly
 
                 "BL      sub_FFC14A34_my\n"        // divert to intercept task_ShootSeqTask
                 "BL      sub_FFC19B74\n"
@@ -385,8 +385,8 @@ void __attribute__((naked,noinline)) sub_FFC49DC0_my() { //#fs  // CreateTask_Ca
                 "MOV     R3, #0\n"
                 //"STR     R3, [SP,#0x10+var_10]\n"
                 "STR     R3, [SP]\n"
-                //"LDR     R3, =0xFFC49B38\n"           // task_CaptSeqTask  //TODO: COMMENT!!!
-                "LDR     R3, =task_CaptSeqTask_my\n"            // task_CaptSeqTask //TODO: uncomment!!!
+                //"LDR     R3, =0xFFC49B38\n"           // task_CaptSeqTask
+                "LDR     R3, =task_CaptSeqTask_my\n"            // task_CaptSeqTask
                 "LDR     R0, =0xFFC49EF4\n"             // aCaptseqtask ; "CaptSeqTask"
                 "MOV     R2, #0x1000\n"
                 "MOV     R1, #0x17\n"
@@ -395,5 +395,4 @@ void __attribute__((naked,noinline)) sub_FFC49DC0_my() { //#fs  // CreateTask_Ca
         ".ltorg\n"
         );
 }; //#fe
-//UP? (uncomment task_CaptSeqTask_my)
 
