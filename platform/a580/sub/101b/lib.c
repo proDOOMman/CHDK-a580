@@ -24,7 +24,7 @@ void *vid_get_viewport_live_fb()
 {
 //    return (void*)0;//0x10670ee0;
     void **fb=(void **)0x6AA8; //0xFFCA0CC4
-    unsigned char buff = *((unsigned char*)0x2084);
+    unsigned char buff = *((unsigned char*)0x1FE8);
     if (buff == 0) {
         buff = 2;
     }
